@@ -13,7 +13,7 @@
          <font>
             <Font name="Avenir Book" size="36.0" />
          </font></Label>
-      <TableView layoutX="14.0" layoutY="76.0" prefHeight="282.0" prefWidth="442.0">
+      <TableView layoutX="14.0" layoutY="76.0" prefHeight="282.0" prefWidth="442.0" style="-fx-font-family: Avenir Book; -fx-font-size: 13;">
         <columns>
           <TableColumn prefWidth="101.0" text="Product Name" />
           <TableColumn prefWidth="160.0" text="Description" />

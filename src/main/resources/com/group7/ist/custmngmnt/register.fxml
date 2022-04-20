@@ -7,25 +7,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="287.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
    <children>
       <Label fx:id="lblTitle" layoutX="60.0" layoutY="21.0" text="Forest Registration">
          <font>
             <Font name="Avenir Next Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tfFirstName" layoutX="16.0" layoutY="85.0" prefHeight="26.0" prefWidth="256.0" />
-      <TextField fx:id="tfLastName" layoutX="16.0" layoutY="142.0" prefHeight="26.0" prefWidth="256.0" />
+      <TextField fx:id="tfFirstName" layoutX="16.0" layoutY="85.0" prefHeight="26.0" prefWidth="256.0">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="tfLastName" layoutX="16.0" layoutY="142.0" prefHeight="26.0" prefWidth="256.0">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></TextField>
       <Label fx:id="lblEmail" layoutX="19.0" layoutY="174.0" text="Email">
          <font>
             <Font name="Avenir Book" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tfEmail" layoutX="16.0" layoutY="197.0" prefHeight="26.0" prefWidth="256.0" />
-      <PasswordField fx:id="pfPassword" layoutX="17.0" layoutY="253.0" prefHeight="26.0" prefWidth="256.0" />
-      <PasswordField fx:id="pfConfirmPassword" layoutX="16.0" layoutY="309.0" prefHeight="26.0" prefWidth="256.0" />
-      <Button fx:id="btnContinue" layoutX="48.0" layoutY="366.0" mnemonicParsing="false" onAction="#registerCustomer" prefHeight="26.0" prefWidth="191.0" text="Continue">
+      <TextField fx:id="tfEmail" layoutX="16.0" layoutY="197.0" prefHeight="26.0" prefWidth="256.0">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></TextField>
+      <PasswordField fx:id="pfPassword" layoutX="17.0" layoutY="253.0" prefHeight="26.0" prefWidth="256.0">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></PasswordField>
+      <PasswordField fx:id="pfConfirmPassword" layoutX="16.0" layoutY="309.0" prefHeight="26.0" prefWidth="256.0">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></PasswordField>
+      <Button fx:id="btnContinue" layoutX="48.0" layoutY="417.0" mnemonicParsing="false" onAction="#registerCustomer" prefHeight="26.0" prefWidth="191.0" text="Continue">
          <font>
             <Font name="Avenir Book" size="14.0" />
          </font>
@@ -50,5 +64,14 @@
             <Font name="Avenir Book" size="18.0" />
          </font>
       </Label>
+      <Label fx:id="lblSecurityPIN" layoutX="20.0" layoutY="341.0" text="6-Digit Security PIN">
+         <font>
+            <Font name="Avenir Book" size="18.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pfSecurityPIN" layoutX="14.0" layoutY="368.0" prefHeight="26.0" prefWidth="256.0">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></PasswordField>
    </children>
 </AnchorPane>
