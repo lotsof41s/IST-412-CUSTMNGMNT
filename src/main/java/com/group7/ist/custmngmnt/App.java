@@ -17,15 +17,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-<<<<<<< HEAD
+
 
         scene = new Scene(loadFXML("primary"));
 
         scene = new Scene(loadFXML("register"));
 
-=======
         scene = new Scene(loadFXML("register"));
->>>>>>> d8febf2588d2c244b5be4f516263d92d2c280f35
+
         stage.setScene(scene);
         stage.show();
         System.out.println("test code");

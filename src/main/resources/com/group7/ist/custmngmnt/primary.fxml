@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="382.0" prefWidth="443.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<VBox alignment="CENTER" prefHeight="382.0" prefWidth="443.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group7.ist.custmngmnt.LoginController">
    <children>
       <Pane prefHeight="424.0" prefWidth="504.0">
          <children>
@@ -17,7 +17,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button fx:id="loginButton" layoutX="224.0" layoutY="275.0" onAction="#switchToSecondary" prefHeight="15.0" prefWidth="85.0" text="Login" />
+            <Button fx:id="loginButton" layoutX="224.0" layoutY="275.0" onAction="#loginCustomer" prefHeight="15.0" prefWidth="85.0" text="Login" />
             <TextField fx:id="usernameTextField" layoutX="192.0" layoutY="148.0" />
             <TextField fx:id="passwordTextField" layoutX="192.0" layoutY="204.0" />
             <Label fx:id="usernameLable" layoutX="78.0" layoutY="138.0" text="Username:">

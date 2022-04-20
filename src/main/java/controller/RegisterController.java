@@ -2,21 +2,19 @@ package controller;
 
 import com.group7.ist.custmngmnt.App;
 import java.io.IOException;
-<<<<<<< HEAD
-=======
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
->>>>>>> staging
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-<<<<<<< HEAD
-=======
+
 import util.ValidateUtil;
->>>>>>> staging
+
 
 public class RegisterController {
 
@@ -40,24 +38,22 @@ public class RegisterController {
 
     @FXML
     private Label lblTitle;
-<<<<<<< HEAD
-=======
+
     
     @FXML
     private Label lblSecurityPIN;
->>>>>>> staging
+
 
     @FXML
     private PasswordField pfConfirmPassword;
 
     @FXML
     private PasswordField pfPassword;
-<<<<<<< HEAD
-=======
+
     
     @FXML
     private PasswordField pfSecurityPIN;
->>>>>>> staging
+
 
     @FXML
     private TextField tfEmail;
@@ -70,9 +66,8 @@ public class RegisterController {
 
     @FXML
     void registerCustomer(ActionEvent event) throws IOException {
-<<<<<<< HEAD
         App.setRoot("home");
-=======
+
         String firstName = tfFirstName.getText();
         String lastName = tfLastName.getText();
         String email = tfEmail.getText();
@@ -114,6 +109,9 @@ public class RegisterController {
     private boolean emailNotTaken(String email) {
         // read current JSONArray, for each object see if object.get("email")
         // is equal to email, if so return false, else return true
+        return false;
+        // read current JSONArray, for each object see if object.get("email")
+        // is equal to email, if so return false, else return true
     }
     
     private boolean passwordsMatch(String password, String confirmPassword) {
@@ -135,7 +133,7 @@ public class RegisterController {
 //        customerList.add(customer);
 //        
 //        JSONUtil.writeJSON(customerList, "customers.json");
->>>>>>> staging
+
     }
 
 }

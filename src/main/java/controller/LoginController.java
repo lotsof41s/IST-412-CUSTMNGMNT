@@ -1,6 +1,6 @@
 package controller;
 
-<<<<<<< HEAD
+
 import java.io.FileWriter;
 
 import com.group7.ist.custmngmnt.App;
@@ -79,16 +79,4 @@ public class LoginController {
     }
 
     //end of code 
-=======
-import com.group7.ist.custmngmnt.App;
-import java.io.IOException;
-import javafx.fxml.FXML;
-
-public class LoginController {
-
-    @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
-    }
->>>>>>> d8febf2588d2c244b5be4f516263d92d2c280f35
 }
