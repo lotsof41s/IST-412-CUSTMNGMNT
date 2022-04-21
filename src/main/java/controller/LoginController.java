@@ -9,7 +9,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.Customer;
 import util.AlertUtil;
-import util.JSONUtil;
+import util.JsonUtil;
 import util.SessionUtil;
 
 public class LoginController {
@@ -28,7 +28,7 @@ public class LoginController {
         if (email.equals("") || password.equals("")) {
             AlertUtil.errorAlert("All Fields Required", "Please enter an email and password");
         } else {
-            List<Customer> customers = JSONUtil.readJSON();
+            List<Customer> customers = JsonUtil.readJSON();
             Customer loggingInCustomer = null;
 
             for (Customer customer : customers) {
