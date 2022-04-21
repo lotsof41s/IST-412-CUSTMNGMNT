@@ -16,6 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 import com.google.gson.Gson;
@@ -29,6 +30,8 @@ import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+=======
+>>>>>>> staging
 import java.util.List;
 import model.Customer;
 import util.AlertUtil;
@@ -196,6 +199,7 @@ public class RegisterController {
     private void addCustomerToSystem(String firstName, String lastName,
             String email, String password, String securityPIN) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 //        JSONUtil.readJSON("customers.json");
 //        
 //        JSONObject customer = new JSONObject;
@@ -226,11 +230,14 @@ public class RegisterController {
 //            System.out.println(ex.getMessage());
 //        }
 
+=======
+>>>>>>> staging
           List<Customer> customers = JsonUtil.readJSON();
           
           customers.add(new Customer(firstName, lastName, email, password, securityPIN));
           
           JsonUtil.writeJSON(customers);
+<<<<<<< HEAD
 
 //        try {
 //            Gson gson = new Gson();
@@ -249,6 +256,8 @@ public class RegisterController {
 //        } catch (Exception ex) {
 //            System.out.println(ex.getMessage());
 //        }
+>>>>>>> staging
+=======
 >>>>>>> staging
     }
 

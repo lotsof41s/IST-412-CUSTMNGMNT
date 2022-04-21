@@ -14,7 +14,7 @@ public class Customer {
     // private List<Address> addresses;
     private String address;
     // private List<PaymentMethod> paymentMethods;
-    private String paymentMethod;
+    private String cardNumber;
     // private List<Order> orders;
     
     public Customer(String firstName, String lastName, String email, String 
@@ -50,8 +50,8 @@ public class Customer {
         return address;
     }
 
-    public String getPaymentMethod() {
-        return paymentMethod;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
     public void setFirstName(String firstName) {
@@ -78,8 +78,37 @@ public class Customer {
         this.address = address;
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return firstName.hashCode() + lastName.hashCode() + email.hashCode() +
+                password.hashCode() + securityPIN.hashCode() + address.hashCode() +
+                cardNumber.hashCode() * 31;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        boolean result = o instanceof Customer;
+        
+        if (result) {
+            Customer other = (Customer) o;
+            
+            if (this.address == null || this.cardNumber == null) {
+            result = firstName.equals((other.firstName)) && lastName.equals(other.lastName)
+                && email.equals(other.email) && password.equals(other.password)
+                && securityPIN.equals(other.securityPIN);
+            } else {
+                result = firstName.equals((other.firstName)) && lastName.equals(other.lastName)
+                && email.equals(other.email) && password.equals(other.password)
+                && securityPIN.equals(other.securityPIN) && address.equals(other.address)
+                && cardNumber.equals(other.cardNumber);
+            }
+        }
+
+        return result;
     }
     
 }

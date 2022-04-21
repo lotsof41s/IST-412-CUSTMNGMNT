@@ -8,6 +8,11 @@ import javafx.fxml.FXML;
 public class HomeController {
 
     @FXML
+    void logout(ActionEvent event) {
+        System.exit(0);
+    }
+    
+    @FXML
     void switchToProfile(ActionEvent event) throws IOException {
         App.setRoot("profile");
     }

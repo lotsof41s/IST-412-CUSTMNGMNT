@@ -40,7 +40,7 @@
             <Font name="Avenir Book" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="394.0" layoutY="36.0" mnemonicParsing="false" text="Logout">
+      <Button layoutX="394.0" layoutY="36.0" mnemonicParsing="false" onAction="#logout" text="Logout">
          <font>
             <Font name="Avenir Book" size="13.0" />
          </font>
