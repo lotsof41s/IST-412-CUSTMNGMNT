@@ -1,23 +1,2 @@
 [
-  {
-    "firstName": "Jared",
-    "lastName": "Butterfield",
-    "email": "jb@mail.com",
-    "password": "Password123@",
-    "securityPIN": "123456"
-  },
-  {
-    "firstName": "JB",
-    "lastName": "JB",
-    "email": "mm@mail.com",
-    "password": "Password123@",
-    "securityPIN": "111111"
-  },
-  {
-    "firstName": "jafjk",
-    "lastName": "akfjlk",
-    "email": "jkaf@mail.com",
-    "password": "Password123@",
-    "securityPIN": "111111"
-  }
 ]

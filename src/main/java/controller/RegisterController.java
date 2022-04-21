@@ -6,17 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.Reader;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import model.Customer;
 import util.AlertUtil;
@@ -137,44 +126,11 @@ public class RegisterController {
 
     private void addCustomerToSystem(String firstName, String lastName,
             String email, String password, String securityPIN) {
-//        String path = "customers.json";
-//
-//        try ( BufferedReader reader = new BufferedReader(new FileReader(path));  Writer writer = new FileWriter(path)) {
-//            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//
-//            // Error from reader being null?
-//            // List<Customer> customers = gson.fromJson(reader, new TypeToken<List<Customer>>(){}.getType());
-//            List<Customer> customers = new ArrayList<>();
-//            customers.add(new Customer(firstName, lastName, email, password, securityPIN));
-//
-//            gson.toJson(customers, writer);
-//        } catch (IOException ex) {
-//            System.out.println(ex.getMessage());
-//        }
-
           List<Customer> customers = JsonUtil.readJSON();
           
           customers.add(new Customer(firstName, lastName, email, password, securityPIN));
           
           JsonUtil.writeJSON(customers);
-
-//        try {
-//            Gson gson = new Gson();
-//
-//            Reader reader = Files.newBufferedReader(Paths.get("customers.json"));
-//            Writer writer = Files.newBufferedWriter(Paths.get("customers.json"));
-//
-//            List<Customer> customers = gson.fromJson(reader, new TypeToken<List<Customer>>(){}.getType());
-//            customers.add(new Customer(firstName, lastName, email, password, securityPIN));
-//
-//            gson.toJson(customers, writer);
-//
-//            reader.close();
-//            writer.close();
-//
-//        } catch (Exception ex) {
-//            System.out.println(ex.getMessage());
-//        }
     }
 
 }
