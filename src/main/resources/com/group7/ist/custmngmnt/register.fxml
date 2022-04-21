@@ -8,10 +8,14 @@
 <?import javafx.scene.text.Font?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="287.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
 =======
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
+>>>>>>> staging
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
 >>>>>>> staging
    <children>
       <Label fx:id="lblTitle" layoutX="60.0" layoutY="21.0" text="Forest Registration">
@@ -88,10 +92,20 @@
             <Font name="Avenir Book" size="18.0" />
          </font>
       </Label>
-      <PasswordField fx:id="pfSecurityPIN" layoutX="14.0" layoutY="368.0" prefHeight="26.0" prefWidth="256.0">
+      <PasswordField fx:id="pfSecurityPIN" layoutX="15.0" layoutY="368.0" prefHeight="26.0" prefWidth="256.0">
          <font>
             <Font name="Avenir Book" size="13.0" />
+<<<<<<< HEAD
          </font></PasswordField>
+>>>>>>> staging
+=======
+         </font>
+      </PasswordField>
+      <Button fx:id="btnBack" layoutX="48.0" layoutY="456.0" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="191.0" text="Back">
+         <font>
+            <Font name="Avenir Book" size="14.0" />
+         </font>
+      </Button>
 >>>>>>> staging
    </children>
 </AnchorPane>

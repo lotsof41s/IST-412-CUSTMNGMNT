@@ -3,24 +3,44 @@ package controller;
 import com.group7.ist.custmngmnt.App;
 import java.io.IOException;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 >>>>>>> staging
+=======
+>>>>>>> staging
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.Reader;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import model.Customer;
+import util.AlertUtil;
+import util.JSONUtil;
+>>>>>>> staging
 import util.ValidateUtil;
 >>>>>>> staging
 
 public class RegisterController {
 
     @FXML
+<<<<<<< HEAD
     private Button btnContinue;
 
     @FXML
@@ -48,13 +68,19 @@ public class RegisterController {
 >>>>>>> staging
 
     @FXML
+=======
+>>>>>>> staging
     private PasswordField pfConfirmPassword;
 
     @FXML
     private PasswordField pfPassword;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
+=======
+
+>>>>>>> staging
     @FXML
     private PasswordField pfSecurityPIN;
 >>>>>>> staging
@@ -69,6 +95,11 @@ public class RegisterController {
     private TextField tfLastName;
 
     @FXML
+    void goBack(ActionEvent event) throws IOException {
+        App.setRoot("login");
+    }
+
+    @FXML
     void registerCustomer(ActionEvent event) throws IOException {
 <<<<<<< HEAD
         App.setRoot("home");
@@ -80,48 +111,87 @@ public class RegisterController {
         String confirmPassword = pfConfirmPassword.getText();
         String securityPIN = pfSecurityPIN.getText();
 
-        if (!(firstName.equals("") || lastName.equals("") || email.equals("") 
-                && password.equals("") || confirmPassword.equals("") ||
-                securityPIN.equals(""))) {
-            if (ValidateUtil.validateEmail(email)) {
-                if (emailNotTaken(email)) {
-                    if (ValidateUtil.validatePassword(password)) {
-                        if (passwordsMatch(password, confirmPassword)) {
-                            if (ValidateUtil.validateSecurityPIN(securityPIN)) {
-                                addCustomerToSystem(firstName, lastName,
-                                        email, password, securityPIN);
-                                App.setRoot("home");
+        if (!(firstName.equals("") || lastName.equals("") || email.equals("")
+                && password.equals("") || confirmPassword.equals("")
+                || securityPIN.equals(""))) {
+            if (ValidateUtil.validateName(firstName)) {
+                if (ValidateUtil.validateName(lastName)) {
+                    if (ValidateUtil.validateEmail(email)) {
+                        if (emailNotTaken(email)) {
+                            if (ValidateUtil.validatePassword(password)) {
+                                if (passwordsMatch(password, confirmPassword)) {
+                                    if (ValidateUtil.validateSecurityPIN(securityPIN)) {
+                                        addCustomerToSystem(firstName, lastName,
+                                                email, password, securityPIN);
+                                        AlertUtil.successAlert("Registration Successful",
+                                                "You may now login");
+                                        App.setRoot("login");
+                                    } else {
+                                        AlertUtil.errorAlert("Invalid Security PIN",
+                                                "Security PIN must be a 6 digit "
+                                                + "number");
+                                    }
+                                } else {
+                                    AlertUtil.errorAlert("Passwords Do Not Match",
+                                            "Please re-enter your password "
+                                            + "to ensure they match");
+                                }
                             } else {
-                                System.out.println("Invalid security PIN");
+                                AlertUtil.errorAlert("Invalid Password",
+                                        "Password must: be eight "
+                                        + "characters long, "
+                                        + "contain at least "
+                                        + "one lowercase, "
+                                        + "contain at least "
+                                        + "one uppercaster, "
+                                        + "contain at least "
+                                        + "one digit, contain"
+                                        + "at least one special "
+                                        + "character, and cannot "
+                                        + "contain any whitespace");
                             }
                         } else {
-                            System.out.println("Passwords do not match");
+                            AlertUtil.errorAlert("Email Already Registered",
+                                    "Please enter a new email address");
                         }
                     } else {
-                        System.out.println("Invalid password");
+                        AlertUtil.errorAlert("Invalid Email",
+                                "Email must be in the form "
+                                + "<email>@<domain>");
                     }
                 } else {
-                    System.out.println("Email is already registered");
+                    AlertUtil.errorAlert("Invalid Last Name",
+                            "No digits are allowed");
                 }
             } else {
-                System.out.println("Invalid email");
+                AlertUtil.errorAlert("Invalid First Name",
+                        "No digits are allowed");
             }
         } else {
-            System.out.println("All fields are required");
+            AlertUtil.errorAlert("All Fields Required", "Please do not leave any fields "
+                    + "blank");
         }
     }
-    
+
     private boolean emailNotTaken(String email) {
-        // read current JSONArray, for each object see if object.get("email")
-        // is equal to email, if so return false, else return true
+        List<Customer> customers = JSONUtil.readJSON();
+
+        for (Customer customer : customers) {
+            if (customer.getEmail().equals(email)) {
+                return false;
+            }
+        }
+        
+        return true;
     }
-    
+
     private boolean passwordsMatch(String password, String confirmPassword) {
         return password.equals(confirmPassword);
     }
-    
+
     private void addCustomerToSystem(String firstName, String lastName,
             String email, String password, String securityPIN) {
+<<<<<<< HEAD
 //        JSONUtil.readJSON("customers.json");
 //        
 //        JSONObject customer = new JSONObject;
@@ -135,6 +205,46 @@ public class RegisterController {
 //        customerList.add(customer);
 //        
 //        JSONUtil.writeJSON(customerList, "customers.json");
+>>>>>>> staging
+=======
+//        String path = "customers.json";
+//
+//        try ( BufferedReader reader = new BufferedReader(new FileReader(path));  Writer writer = new FileWriter(path)) {
+//            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//
+//            // Error from reader being null?
+//            // List<Customer> customers = gson.fromJson(reader, new TypeToken<List<Customer>>(){}.getType());
+//            List<Customer> customers = new ArrayList<>();
+//            customers.add(new Customer(firstName, lastName, email, password, securityPIN));
+//
+//            gson.toJson(customers, writer);
+//        } catch (IOException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+
+          List<Customer> customers = JSONUtil.readJSON();
+          
+          customers.add(new Customer(firstName, lastName, email, password, securityPIN));
+          
+          JSONUtil.writeJSON(customers);
+
+//        try {
+//            Gson gson = new Gson();
+//
+//            Reader reader = Files.newBufferedReader(Paths.get("customers.json"));
+//            Writer writer = Files.newBufferedWriter(Paths.get("customers.json"));
+//
+//            List<Customer> customers = gson.fromJson(reader, new TypeToken<List<Customer>>(){}.getType());
+//            customers.add(new Customer(firstName, lastName, email, password, securityPIN));
+//
+//            gson.toJson(customers, writer);
+//
+//            reader.close();
+//            writer.close();
+//
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//        }
 >>>>>>> staging
     }
 
