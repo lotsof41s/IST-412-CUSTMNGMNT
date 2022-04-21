@@ -32,7 +32,11 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Customer;
 import util.AlertUtil;
+<<<<<<< HEAD
 import util.JSONUtil;
+>>>>>>> staging
+=======
+import util.JsonUtil;
 >>>>>>> staging
 import util.ValidateUtil;
 >>>>>>> staging
@@ -174,7 +178,7 @@ public class RegisterController {
     }
 
     private boolean emailNotTaken(String email) {
-        List<Customer> customers = JSONUtil.readJSON();
+        List<Customer> customers = JsonUtil.readJSON();
 
         for (Customer customer : customers) {
             if (customer.getEmail().equals(email)) {
@@ -222,11 +226,11 @@ public class RegisterController {
 //            System.out.println(ex.getMessage());
 //        }
 
-          List<Customer> customers = JSONUtil.readJSON();
+          List<Customer> customers = JsonUtil.readJSON();
           
           customers.add(new Customer(firstName, lastName, email, password, securityPIN));
           
-          JSONUtil.writeJSON(customers);
+          JsonUtil.writeJSON(customers);
 
 //        try {
 //            Gson gson = new Gson();

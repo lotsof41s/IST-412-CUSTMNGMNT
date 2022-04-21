@@ -14,7 +14,7 @@ import model.Customer;
  *
  * @author jaredb
  */
-public class JSONUtil {
+public class JsonUtil {
     public static List<Customer> readJSON() {
         List<Customer> customers = null;
         
