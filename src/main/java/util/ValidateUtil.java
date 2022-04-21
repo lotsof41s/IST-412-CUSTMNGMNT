@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
  * @author jaredb
  */
 public class ValidateUtil {
-    public static boolean validateFirstOrName(String firstOrLastName) {
-        String validFirstOrLast = "^[A-Za-z,.'-]+$";
+    public static boolean validateName(String name) {
+        String validName = "^[A-Za-z]+$";
         
-        Pattern firstOrLastPattern = Pattern.compile(validFirstOrLast);
-        Matcher firstOrLastMatcher = firstOrLastPattern.matcher(firstOrLastName);
+        Pattern namePattern = Pattern.compile(validName);
+        Matcher nameMatcher = namePattern.matcher(name);
         
-        return firstOrLastMatcher.matches();
+        return nameMatcher.matches();
     }
     
     public static boolean validateEmail(String email) {
